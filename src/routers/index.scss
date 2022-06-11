@@ -1,0 +1,29 @@
+.routers{
+    width: 100%;
+    margin-top: 30px;
+    .routers__item{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .routers__link {
+      margin: 20px 0;
+      color: #000;
+      text-decoration: none;
+      // 取消a标签在移动端点击时的蓝色
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-user-select: none;
+      -moz-user-focus: none;
+      -moz-user-select: none;
+    }
+    .routers__link--active{
+      color: #F56C6C;
+    }
+    .btn{
+      min-width: 70px;
+      font-size: 12px;
+      line-height: 26px;
+      background: #F56C6C;
+      border-radius: 2px;
+    }
+  }
