@@ -1,14 +1,18 @@
-import logo from './logo.svg';
+
 import './App.less';
 import '@/utils/rem.js';
-
+import store from './store';
 import 'reset-css';
+import { Provider } from 'react-redux';
 import Routers from './routers/index.jsx';
-function App() {  
+function App() {
   return (
-    <div className="App">
-      <Routers/>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Routers />
+      </div>
+    </Provider>
+
   );
 }
 

@@ -3,4 +3,9 @@ function Child(){
         <div>Home子路由</div>
     )
 }
-export default Child
+function Child2(){
+    return(
+        <div>Home-2子路由</div>
+    )
+}
+export  {Child2,Child}
