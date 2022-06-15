@@ -1,22 +1,28 @@
-import axios from 'axios'
+import axios from 'axios';
 import qs from 'qs'
 import {  Toast } from 'antd-mobile'
-const service = axios
+import {  useNavigate} from 'react-router-dom'
+
 // 请求拦截器
-service.interceptors.request.use(config => {
-  let token = localStorage.getItem("x-auth-token");
-    if (token) {
-      config.headers = {
-        "x-auth-token": token
-      }
-    }
+axios.interceptors.request.use(config => {
+  console.log('config: ', config);
+  const passURL = ['/api/1024/login'];
+  if (passURL.includes(config.url)) return config;
+  const tk = localStorage.getItem('TOKEN');
+  if (tk) {
+      config.headers.Authorization = 'Bearer ' + tk;
+  } else {
+      delete config.headers.Authorization;
+  }
   config.paramsSerializer = p => {
     return qs.stringify(p, { arrayFormat: 'repeat', allowDots: true })
   }
+ 
   return config
+
 })
 // 响应拦截器
-service.interceptors.response.use(
+axios.interceptors.response.use(
   response => {
     
     const { statusText, status } = response
@@ -69,4 +75,4 @@ service.interceptors.response.use(
   }
 )
 
-export default service
+export default axios

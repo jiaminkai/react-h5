@@ -1,5 +1,43 @@
 .login{
     width: 100vw;
     height: 100vh;
-    background: #75c4ff;
+    background: #264177;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    .login-from{
+        width: 100%;
+        margin: 0 30px ;
+        height: 280px;
+        background: #ffffff;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        .from-hea{
+            width: 100%;
+            height: 130px;
+            border-bottom: 1px solid #dedede;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .from-title{
+                font-weight: 600;
+                font-size: 22px;
+
+            }
+            .from-icon{
+                width: 80px;
+                height: 80px;
+                background: url('../../assets/images/login-logo.png');
+                background-size: 80px 80px;
+            }
+        }
+        .from-sheet{
+            width: 100%;
+            height: 150px;
+        }
+        
+    }   
 }

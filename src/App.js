@@ -5,6 +5,7 @@ import store from './store';
 import 'reset-css';
 import { Provider } from 'react-redux';
 import Routers from './routers/index.jsx';
+import { ifLoginFn  } from './hoc';
 function App() {
   return (
     <Provider store={store}>
@@ -15,5 +16,4 @@ function App() {
 
   );
 }
-
-export default App;
+export default ifLoginFn(App)

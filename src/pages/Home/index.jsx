@@ -30,7 +30,6 @@ const MapDispatch = (dispatch) => {
     }
 }
 const setList = (stateProps, dispatchProps, ownProps) =>{
-    console.log('stateProps, dispatchProps, ownProps: ', stateProps, dispatchProps, ownProps);
     return Object.assign( stateProps, dispatchProps, ownProps)
 }
 export default connect(null, MapDispatch,setList)(Home)
