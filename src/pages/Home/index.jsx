@@ -12,10 +12,8 @@ function Home(props) {
         <div>
             <br />
             <div onClick={() => { handleClick(props) }}>我是Home页面</div>
-            {/* <div >{state}</div> */}
             <br />
-            <Link className='link' to="child" > Tachilidb1</Link>
-            <Link className='link' to="child2" > Tachilidb1</Link>
+
             <Outlet />
         </div>
     )
