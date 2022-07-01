@@ -1,6 +1,12 @@
 scroll-view ::-webkit-scrollbar{
     display: none;
   }
+  .stickyNav{
+    position: sticky;
+    background: #ffffff;
+    opacity: 1;
+    top: 0;
+  }
   /*下划线*/
   .th-line{
     text-decoration: line-through
@@ -348,22 +354,27 @@ scroll-view ::-webkit-scrollbar{
   
   /* 内边距规范 */
   .pa-5{
-    padding: 5px
+    padding: 5px;
+    box-sizing: border-box;
   }
   .pa-7{
-    padding: 7px
+    padding: 7px;
+    box-sizing: border-box;
+    
   }
   .pa-10{
-    padding: 10px
+    padding: 10px;
+    box-sizing: border-box;
   }
   .pa-15{
-    padding: 15px
+    padding: 15px;
+    box-sizing: border-box;
   }
   .pa-l5{
     padding-left: 5px
   }
   .pa-r5{
-    padding-left: 5px
+    padding-right: 5px
   }
   .pa-l10{
     padding-left: 10px
@@ -438,7 +449,30 @@ scroll-view ::-webkit-scrollbar{
   .pa-b30{
     padding-bottom: 30px
   }
-  
+  .pa-0-5{
+    padding: 0 5px;
+  }
+  .pa-5-0{
+    padding:  5px 0;
+  }
+  .pa-0-10{
+    padding: 0 10px;
+  }
+  .pa-15-0{
+    padding:  15px 0;
+  }
+  .pa-0-15{
+    padding: 0 15px;
+  }
+  .pa-30-0{
+    padding:  30px 0;
+  }
+  .pa-0-30{
+    padding: 0 30px;
+  }
+  .pa-10-0{
+    padding:  10px 0;
+  }
   /*圆角*/
   .ra-30{
     border-radius: 30px
@@ -524,6 +558,10 @@ scroll-view ::-webkit-scrollbar{
   .border-b{
     border-bottom: solid 1px #EFEFEF
   }
+  .border-t{
+    border-top: solid 1px #EFEFEF
+
+  }
   
   .border-b-red{
     border-bottom: solid 1px #EC1818
@@ -553,9 +591,14 @@ scroll-view ::-webkit-scrollbar{
   
   
   /*字体大小*/
+  .fo-12{
+    font-size: 12px;
+   }
+   .fo-14{
+    font-size: 14px;
+   }
   .fo-16{
-   font-size: 24px;
-   transform: scale(0.65)
+   font-size: 16px;
   }
   .fo-18{
    font-size: 24px;
@@ -720,8 +763,47 @@ scroll-view ::-webkit-scrollbar{
   .f-w-bold{
       font-weight: bold;
   }
-  .display-flex{
+  .flex{
     display: flex;
+  }
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-column-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+  }
+  .f-ju-sb{
+    justify-content:space-between !important;
+  }
+  .f-ju-sa{
+    justify-content:space-around !important;
+  }
+  .f-ju-se{
+    justify-content:space-evenly!important;
+  }
+  .f-al-center{
+    align-items: center;
+  }
+  .flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .f-al-center{
+    align-items: center;
+  }
+  .b-bottom{
+    border-bottom: #dedede solid 1px;
+  }
+  .flex-row-sb{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .border-bottom-red{
       position: relative;
@@ -737,13 +819,30 @@ scroll-view ::-webkit-scrollbar{
   .w-100{
       width: 100%;
   }
+  .max-200{
+    width: 200px;
+  }
   .fixed {position: fixed;top: 0;left: 0;right: 0;bottom: 0;}
   /*字体加粗*/
   .bold {font-weight: bold;}
+  .text-left{
+    text-align: left;
+  }
+  .text-right{
+    text-align: right;
+
+  }
   /*多行文字隐藏*/
   .two-row-hidden {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;text-align: justify;white-space: normal;}
+  .three-row-hidden {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;text-align: justify;white-space: normal;}
+
   /*单行文字隐藏*/
   .one-row-hidden{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
   .nowrap{
       white-space:nowrap
+  }
+  // 表格布局
+  .grid-c-4{
+    display:grid;
+    grid-template-columns: repeat(4, 25%);
   }

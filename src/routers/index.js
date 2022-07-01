@@ -3,34 +3,42 @@ import { useRoutes, Navigate } from "react-router-dom";
 // import { LoadingOutlined } from '@ant-design/icons';
 import Dfinder from '@/pages/Dfinder'
 import Home from '@/pages/Home/index.jsx';
+import Index from '@/pages/Index';
+import Shops from '@/pages/Me/Shops/Shops.jsx'
+import Account from '@/pages/Me/Account/Account.jsx'
 import Login from '@/pages/Login'
-import {Child2,Child} from '@/pages/Child/index.jsx';
-
-
+import Mine from '@/pages/Me/me.jsx'
 const List = lazy(() => import("@/pages/List"));
 export default () => useRoutes([
   {
     path: "/",
-    element: <Home id="home" />
+    element: <Index id="index" />,
+    children: [
+      {
+        path: "/",
+        element: <Home id="home" />
+      },
+      {
+        path: "/mine",
+        element: <Mine id="mine" />
+      },
+      {
+        path: "/home",
+        element: <Home id="home" />
+      },
+    ]
   },
   {
     path: "/login",
     element: <Login id="login" />
   },
-    {
-    path: "/home",
-    element: <Home id="home" />,
-    children: [
-      {
-        index: true,
-        element: <Child to="child" />,
-      },
-      {
-        path: "child2",
-        element: <Child2 id="child" />
-      },
-      { path: "*", element: <Navigate to="/home" /> }
-    ]
+  {
+    path: "/shops",
+    element: <Shops id="shops" />
+  },
+  {
+    path: "/account",
+    element: <Account id="account" />
   },
   {
     path: "/list",

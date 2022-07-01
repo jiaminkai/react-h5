@@ -1,0 +1,67 @@
+.cardList{
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  background-color: #ededed;
+}
+.sticky{
+  position: sticky;
+  top: 0;
+}
+.card-item-item{
+  height: 80px;
+}
+.card-max{
+  height: auto;
+  animation-name: down;
+  animation-duration: .8s;
+  // animation-timing-function: ease;
+  // animation-fill-mode:forwards;
+  // -webkit-animation-fill-mode:forwards; /* Safari 和 Chrome */
+}
+.card-min{
+  height: 0px;
+  overflow: hidden;
+  animation-name: up;
+  animation-duration:.8s;
+  // animation-timing-function: ease;
+  // animation-fill-mode:forwards;
+  // -webkit-animation-fill-mode:forwards; /* Safari 和 Chrome */
+}
+.rotatUp{
+  animation-name: rotatup;
+  animation-duration: .8s;
+  animation-timing-function: ease;
+  animation-fill-mode:forwards;
+-webkit-animation-fill-mode:forwards; /* Safari 和 Chrome */
+}
+.rotatRight{
+  animation-name: rotatright;
+  animation-duration: .8s;
+  animation-timing-function: ease;
+  animation-fill-mode:forwards;
+-webkit-animation-fill-mode:forwards; /* Safari 和 Chrome */
+}
+
+@keyframes rotatright { 
+  from { transform:rotate(0deg)}
+  to {transform:rotate(-90deg)}
+}
+@keyframes rotatup { 
+  from { transform:rotate(-90deg)}
+  to {transform:rotate(0deg)}
+}
+
+
+@keyframes up { 
+  from {height: auto;opacity: 1;}
+  to {height: 0px;
+    overflow: hidden;
+    opacity: 0;}
+}
+@keyframes down {
+  from {height: 0px;
+    overflow: hidden;
+    opacity: 0;}
+  to {height: auto;opacity: 1;}
+}
